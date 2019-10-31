@@ -6,7 +6,7 @@ def HTTP_PORT="8090"
 node {
 
     stage('Initialize'){
-        def dockerHome = tool 'myDocker'
+        def dockerHome = tool 'radhika060'
         def mavenHome  = tool 'maven 3.5.2'
         env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
     }
