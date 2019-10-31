@@ -38,6 +38,7 @@ node {
     stage('Push to Docker Registry'){
         withCredentials([usernamePassword(credentialsId: 'radhika060', usernameVariable: 'radhika060', passwordVariable: 'rm1039346')]) {
             pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
+            sh './deploy.sh'
         }
     }
 
@@ -60,6 +61,7 @@ def imageBuild(containerName, tag){
 }
 
 def pushToImage(containerName, tag, dockerUser, dockerPassword){
+    echo "$dockerUser"
     sh "docker login -u $dockerUser -p $dockerPassword"
     echo "logged in"
     sh "docker tag $containerName:$tag $dockerUser/$containerName:$tag"
