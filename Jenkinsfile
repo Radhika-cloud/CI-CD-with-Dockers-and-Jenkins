@@ -36,7 +36,7 @@ node {
     }
 
     stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'radhika060', usernameVariable: 'radhika060', passwordVariable: 'rm1039346')]) {
+        withCredentials([usernamePassword(credentialsId: 'radhika060', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
             pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
             sh './deploy.sh'
         }
