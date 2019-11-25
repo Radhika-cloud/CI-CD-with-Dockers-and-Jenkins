@@ -1,7 +1,7 @@
 def CONTAINER_NAME="docker-pipeline-demo"
 def CONTAINER_TAG="latest"
 def DOCKER_HUB_USER="radhika060"
-def HTTP_PORT="8888"
+def HTTP_PORT="8082"
 
 node {
 
