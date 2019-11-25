@@ -1,12 +1,12 @@
 def CONTAINER_NAME="docker-pipeline-demo"
 def CONTAINER_TAG="latest"
-def DOCKER_HUB_USER="thesuyashgupta"
+def DOCKER_HUB_USER="radhika060"
 def HTTP_PORT="8888"
 
 node {
 
     stage('Initialize'){
-        def dockerHome = tool 'myDocker'
+        def dockerHome = tool 'radhika060'
         def mavenHome  = tool 'maven3'
         env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
     }
